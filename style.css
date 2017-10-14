@@ -1,0 +1,12 @@
+body {
+	background: #efefef;
+	background-image: url(images/geometry2.png);
+	margin: 0;
+	padding: 0;
+}
+
+/* Структура сайта */
+.header {
+	height: 100px;
+	background: #101417;
+}
