@@ -24,7 +24,7 @@ a:hover {
 
 .header {
 	padding-top: 20px;
-	background: radial-gradient(rgba(255, 255, 255, 0.2), #101417 250px, transparent 250px) 10% -200px no-repeat;
+	background: radial-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0) 250px) 10% -200px no-repeat;
 	background-color: #101417;
 	background-size: 500px 500px;
 }
@@ -179,6 +179,17 @@ a:hover {
 
 .anons img {
 	box-shadow: 1px 1px 5px #777;
+	transition: transform 0.5s;
+}
+
+.anons:hover img {
+	transform: scale(1.15) rotate(2deg);
+	transition: transform 3s;
+}
+
+.block:nth-of-type(even) .anons:hover img {
+	transform: scale(1.15) rotate(-2deg);
+	
 }
 
 .anons h3 {
@@ -201,8 +212,59 @@ a:hover {
 .rek img {
 	border: 1px solid #ccc;
 	border-radius: 3px;
+	position: relative;
 }
 
+@-webkit-keyframes prigskok {
+	0%{top:0;}
+	10%{top:40px;}
+	20%{top:-30px;}
+	30%{top: 40px;}
+	40%{top:-20px;}
+	50%{top:40px;}
+	60%{top: -10px;}
+	70%{top:40px;}
+	80%{top:0;}
+	90%{top: 40px;}
+	95%{top: 20px;}
+	100%{top: 0px;}
+}
+
+@-moz-keyframes prigskok {
+	0%{top:0;}
+	10%{top:40px;}
+	20%{top:-30px;}
+	30%{top: 40px;}
+	40%{top:-20px;}
+	50%{top:40px;}
+	60%{top: -10px;}
+	70%{top:40px;}
+	80%{top:0;}
+	90%{top: 40px;}
+	95%{top: 20px;}
+	100%{top: 0px;}
+}
+
+@keyframes prigskok {
+	0%{top:0;}
+	10%{top:40px;}
+	20%{top:-30px;}
+	30%{top: 40px;}
+	40%{top:-20px;}
+	50%{top:40px;}
+	60%{top: -10px;}
+	70%{top:40px;}
+	80%{top:0;}
+	90%{top: 40px;}
+	95%{top: 20px;}
+	100%{top: 0px;}
+}
+
+.rek img:hover {
+	-webkit-animation: prigskok 2s ;
+	-moz-animation: prigskok 2s ;
+	animation: prigskok 2s ;
+}
 /* Подвал */
 
 .footer span{
@@ -237,4 +299,31 @@ a:hover {
 	.anons h3 {
 	font-size: 18px;
 	}
+}
+
+@media screen and (max-width: 640px){
+	.header {
+		text-align: center;
+		background-position: center -130px;
+	}
+
+	.topmenu, .afisha img, .block, .block:nth-of-type(even)  {
+	float: none;
+	}
+
+	.block {
+		width: auto;
+		margin-bottom: 40px;
+	}
+
+	.block:nth-last-of-type(2) {
+		width: auto;
+		margin-bottom: 0px;
+	}
+
+	.footer span{
+	margin: 10px 0;
+	display: block;
+	}
+
 }
